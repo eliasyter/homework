@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data er laget</h1>
+    <div class="form_container">
+            
+        <form  method="POST" >
+            
+            {{ form.hidden_tag() }}
+            
+            <div class="frist">
+                <label for="Fristen for leksen">Velg dato</label>
+                {{ form.frist(class="date")}}
+            </div>
+
+            <div class="fag">
+                <label for="fag">Velg et fag</label>
+                {{ form.fag(class="fag", id="fag")}}
+            </div>
+
+            <div class="oppgave">
+                <label for="oppgave du vil lage">skriv oppgaven</label>
+                {{ form.oppgave(class="oppgave")}}
+            </div>
+
+           
+
+
+            
+            
+            <button class="ordre_knap" type="submit">Lag ordre</button>
+        </form>
+    </div>
+</body>
+</html>

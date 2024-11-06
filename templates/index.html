@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HELLO WORLD</h1>
+    <div class="tabell">
+        <table>
+            <tr>
+                <th>Frist</th>
+                <th>Fag</th>
+                <th>Oppgave</th>
+                
+            </tr>
+            {% for index in indexes %}
+            
+                <td>{{frist[index][:10]}}</td>
+                <td>{{fag[index]}}</td>
+                <td>{{oppgave[index]}}</td>
+                
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <button><a class="btn" href="{{ url_for('lag_lekse') }}">Lag_lekse</a></button>
+</body>
+</html>
