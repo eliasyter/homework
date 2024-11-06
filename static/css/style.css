@@ -1,0 +1,103 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    margin: 20px;
+    color: #333;
+}
+
+/* Table styling */
+.tabell table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.tabell th, .tabell td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.tabell th {
+    background-color: #007acc;
+    color: #fff;
+}
+
+.tabell tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Button styling */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Form container */
+.form_container {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form_container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form_container input, 
+.form_container select, 
+.form_container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.ordre_knap {
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ordre_knap:hover {
+    background-color: #005fa3;
+}

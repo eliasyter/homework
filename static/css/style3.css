@@ -1,0 +1,142 @@
+/* Reset and Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header Styling */
+h1 {
+    color: #222;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Table Styling */
+.tabell table {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabell th, .tabell td {
+    padding: 15px;
+    text-align: left;
+    font-size: 1em;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tabell th {
+    background-color: #4b8ef7;
+    color: #fff;
+    font-weight: 700;
+}
+
+.tabell tr:last-child td {
+    border-bottom: none;
+}
+
+.tabell tr:hover {
+    background-color: #f4f8ff;
+}
+
+/* Button Styling */
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #4b8ef7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #357ae8;
+}
+
+/* Form Container Styling */
+.form_container {
+    width: 90%;
+    max-width: 600px;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.form_container label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.form_container input[type="text"],
+.form_container select,
+.form_container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f4f8ff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form_container input[type="text"]:focus,
+.form_container select:focus,
+.form_container textarea:focus {
+    border-color: #4b8ef7;
+}
+
+/* Submit Button Styling */
+.ordre_knap {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #4b8ef7;
+    color: #fff;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    text-align: center;
+}
+
+.ordre_knap:hover {
+    background-color: #357ae8;
+}
