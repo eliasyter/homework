@@ -5,41 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animasion.css') }}">
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Hent dagens dato
-            const today = new Date();
-        
-            // Hent alle radene i tabellen
-            const rows = document.querySelectorAll("table tr");
-        
-            rows.forEach(row => {
-                // Hent fristdatoen fra første kolonne i raden
-                const fristCell = row.querySelector("td:first-child");
-                if (!fristCell) return;
-        
-                const fristDate = new Date(fristCell.textContent);
-        
-                // Beregn antall dager til fristen
-                const diffTime = fristDate - today;
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        
-                // Legg til CSS-klasse basert på antall dager til fristen
-                if (diffDays > 7) {
-                    // Mer enn 7 dager igjen, sett til grønn
-                    row.classList.add("frisk");
-                } else if (diffDays > 3) {
-                    // Mindre enn 7 dager, men fortsatt tid igjen, sett til gul
-                    row.classList.add("snart");
-                } else {
-                    // Fristen er passert eller i dag, sett til rød
-                    row.classList.add("overfrist");
-                }
-            });
-        });
-        </script>
-        
+   
     
 </head>
 <body>
@@ -53,6 +21,7 @@
                 <th>Frist</th>
                 <th>Fag</th>
                 <th>Oppgave</th>
+                <th>Slett</th>
             </tr>
             {% for index in indexes %}
             <tr>
@@ -62,7 +31,7 @@
                 <td>{{ oppgave[index] }}</td>
                 <td>
                 <form action="{{ url_for('delete_homework', homework_id=ids[index]) }}" method="POST" >
-                    <button type="submit">Delete</button>
+                    <button type="submit">Slett</button>
                 </form>
                 </td>
             </tr>
@@ -70,5 +39,8 @@
         </table>
     </div>
     <button><a class="btn" href="{{ url_for('lag_lekse') }}">Lag_lekse</a></button>
+
+
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
 </body>
 </html>

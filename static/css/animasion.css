@@ -1,0 +1,51 @@
+/* Fade-in for table rows */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+table tr {
+    opacity: 0; /* Start usynlig */
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Forskjellig forsinkelse for hver rad for å lage en staggered effekt */
+table tr:nth-child(2) {
+    animation-delay: 0.1s;
+}
+table tr:nth-child(3) {
+    animation-delay: 0.2s;
+}
+table tr:nth-child(4) {
+    animation-delay: 0.3s;
+}
+/* Fortsett med dette for flere rader */
+
+
+
+
+
+/* Hover-effekt på rader */
+table tr:hover {
+    background-color: #5681ef; /* Lett blåfarge på hover */
+    transform: scale(2.52); /* Liten zoom-effekt */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+
+
+
+
+/* Animasjon på klikk */
+button:active {
+    transform: scale(0.95); /* Liten innsnevring */
+    background-color: #ff6666; /* Endre farge midlertidig */
+    transition: transform 0.1s ease, background-color 0.1s ease;
+}
