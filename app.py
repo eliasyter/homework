@@ -56,6 +56,7 @@ def index():
     frist=[]
     oppgave=[]
     fag=[]
+    ids=[]
     
     #henter all dataen og setter det i rekkefølge etter dato 
     data=Session().query(Lekser).order_by(Lekser.frist)
@@ -71,13 +72,14 @@ def index():
 
     
     for objekt in data:
+        ids.append(objekt.id)
         oppgave.append(objekt.oppgave)
         fag.append(objekt.fag)
         frist.append(str(objekt.frist))
        
 
     indexes=[*range(len(frist))]
-    return render_template('index.html',frist=frist,oppgave=oppgave,indexes=indexes, fag=fag)
+    return render_template('index.html',frist=frist,oppgave=oppgave,indexes=indexes, fag=fag, ids=ids)
 
 
 @app.route('/lag_lekse', methods=['GET','POST'])
@@ -87,9 +89,9 @@ def lag_lekse():
     frist = lag_lekse_form.frist.data
     oppgave= lag_lekse_form.oppgave.data
     fag=lag_lekse_form.fag.data
+
+
     
-
-
     date = datetime.datetime.today().date()
     
     if flask.request.method == "POST":
@@ -101,8 +103,15 @@ def lag_lekse():
 
     return render_template('lag_lekse.html',form=lag_lekse_form)
 
+
+@app.route('/delete/<int:homework_id>', methods=['POST'])
+def delete_homework(homework_id):
+    session.query(Lekser).filter_by(id=homework_id).delete()
+    session.commit()
+    return redirect(url_for('index'))
+
    
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
