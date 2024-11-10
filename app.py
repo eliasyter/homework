@@ -1,3 +1,6 @@
+import os
+
+
 #flask sine esensielle bibloteker 
 import flask
 from flask import Flask, render_template, redirect, url_for, session
@@ -42,7 +45,7 @@ class Lekser(Base):
 
 
 #initsierer kobling til db 
-engine= create_engine("sqlite:///lekser.db",echo=True)
+engine= create_engine(os.environ.get("DATABASE_URL"),echo=True)
 Base.metadata.create_all(bind=engine)
 Session= sessionmaker(bind=engine)
 session= Session()
